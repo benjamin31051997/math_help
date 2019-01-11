@@ -2,6 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
+group='com.github.benjamin31051997'
+
 buildscript {
     repositories {
         jcenter()
@@ -43,20 +45,21 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
+/*
 ext {
-    bintrayRepo = 'TestRepo'
-    bintrayName = 'math-basic-help'
+    bintrayRepo = 'math_basic'
+    bintrayName = 'math_basic'
 
-    publishedGroupId = 'android.thinkfactory'
-    libraryName = 'MathBasics'
-    artifact = 'basic_math_op'
+    publishedGroupId = 'com.android.thinkfactory'
+    libraryName = 'math_basic'
+    artifact = 'math_basic'
 
-    libraryDescription = 'this is a test library to perform some basic mathematical operations.'
+    libraryDescription = 'library to perform some basic mathematical operations(trial 4).'
 
     siteUrl = 'https://github.com/benjamin31051997/math_help'
     gitUrl = 'https://github.com/benjamin31051997/math_help.git'
 
-    libraryVersion = '0.1'
+    libraryVersion = '0.3'
 
     developerId = 'ben'
     developerName = 'Benjamin'
@@ -115,12 +118,14 @@ if (project.hasProperty("android")) { // Android libraries
         source = android.sourceSets.main.java.srcDirs
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
     }
-} /*else { // Java libraries
+} */
+/*else { // Java libraries
     task sourcesJar(type: Jar, dependsOn: classes) {
         classifier = 'sources'
         from sourceSets.main.allSource
     }
-}*/
+}*//*
+
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
@@ -138,7 +143,7 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
-
+    override = true
     configurations = ['archives']
     pkg {
         repo = bintrayRepo
@@ -154,3 +159,4 @@ bintray {
         }
     }
 }
+*/
